@@ -1,0 +1,23 @@
+<!--
+  ~ ic_baseline_phone_android_24.xml
+  ~
+  ~ Created by kimbe on 04-08-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#222"
+        android:pathData="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z" />
+</vector>

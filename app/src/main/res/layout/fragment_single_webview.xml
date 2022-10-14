@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ fragment_single_webview.xml
+  ~
+  ~ Created by Hugo Castro on 07-22-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/webview_single_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

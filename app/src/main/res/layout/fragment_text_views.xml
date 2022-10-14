@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ fragment_controls.xml
+  ~
+  ~ Created by kimberlysweeney on 07-22-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/content_text_autocomplete"
+                layout="@layout/content_text_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <include
+                android:id="@+id/content_text_checked_views"
+                layout="@layout/content_text_checked_views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/content_text_edits"
+                layout="@layout/content_text_edits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/content_text_clocks"
+                layout="@layout/content_text_clocks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/content_text_fields"
+                layout="@layout/content_text_fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/content_text_switchers"
+                layout="@layout/content_text_switchers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/content_text_views"
+                layout="@layout/content_text_views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+

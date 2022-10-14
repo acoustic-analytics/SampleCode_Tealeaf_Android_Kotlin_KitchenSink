@@ -1,0 +1,24 @@
+<!--
+  ~ ic_outline_info_24.xml
+  ~
+  ~ Created by kimberlysweeney on 07-29-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:tint="#000000"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M11,7h2v2h-2zM11,11h2v6h-2zM12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8 8,3.59 8,8 -3.59,8 -8,8z" />
+</vector>

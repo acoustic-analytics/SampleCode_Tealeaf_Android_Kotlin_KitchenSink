@@ -1,0 +1,75 @@
+if (!tealeafRoot.isEmpty()) {
+    task cleanTealeaf(type: Exec) {
+        println "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/"
+        workingDir "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/"
+        commandLine "./gradlew", "clean"
+    }
+
+    task buildTealeaf(type: Exec) {
+        inputs.dir "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/tealeafMod/src"
+        inputs.dir "$tealeafRoot/AndroidSrc/AndroidStudioEOCore/eoCore/src"
+        outputs.file "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/tealeafMod/build/outputs/aar/tealeafMod-debug.aar"
+        outputs.file "$tealeafRoot/AndroidSrc/AndroidStudioEOCore/eoCore/build/outputs/aar/eoCore-debug.aar"
+
+        workingDir "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/"
+        commandLine "./gradlew", ":eoCore:assemble", ":tealeafMod:assemble"
+    }
+
+    task copyEOCore(type: Copy, dependsOn: "buildTealeaf") {
+        inputs.file "$tealeafRoot/AndroidSrc/AndroidStudioEOCore/eoCore/build/outputs/aar/eoCore-debug.aar"
+        outputs.file "${rootProject.projectDir}/app/libs/eoCore.aar"
+
+        from "$tealeafRoot/AndroidSrc/AndroidStudioEOCore/eoCore/build/outputs/aar/eoCore-debug.aar"
+        into "${rootProject.projectDir}/app/libs/"
+        rename "eoCore-debug.aar", "eoCore.aar"
+    }
+
+    task copyTealeafMod(type: Copy, dependsOn: "buildTealeaf") {
+        inputs.file "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/tealeafMod/build/outputs/aar/tealeafMod-debug.aar"
+        outputs.file "${rootProject.projectDir}/app/libs/tealeafmod.aar"
+
+        from "$tealeafRoot/AndroidSrc/AndroidStudioTealeafMod/tealeafMod/build/outputs/aar/tealeafMod-debug.aar"
+        into "${rootProject.projectDir}/app/libs/"
+        rename "tealeafMod-debug.aar", "tealeafmod.aar"
+    }
+
+    task copyTealeaf(dependsOn: ["copyEOCore", "copyTealeafMod"])
+
+    task cleanAll(dependsOn: ["clean", "cleanTealeaf"])
+}
+
+task setPostUrl(type: Copy) {
+    inputs.file "${rootProject.projectDir}/gradle.properties"
+    outputs.file "${rootProject.projectDir}/app/src/main/assets/TealeafBasicConfig.properties"
+
+    from "${rootProject.projectDir}/app/src/main/assets/TealeafBasicConfig.properties"
+    into "${rootProject.projectDir}/app/src/main/assets/"
+    rename ".+", "temp.prop"
+    filter { line ->
+        if (line.contains("PostMessageUrl=") && !postMessageUrl.isEmpty()) {
+            return "PostMessageUrl=$postMessageUrl"
+        } else {
+            return line
+        }
+    }
+    doLast {
+        exec {
+            workingDir "${rootProject.projectDir}/app/src/main/assets"
+            commandLine "mv", "temp.prop", "TealeafBasicConfig.properties"
+        }
+    }
+}
+
+gradle.projectsEvaluated {
+    subprojects {
+        if (name.contains("app")) {
+            if (!tealeafRoot.isEmpty()) {
+                assembleDebug.dependsOn(rootProject.copyTealeaf)
+            }
+
+            if (!postMessageUrl.isEmpty()) {
+                assembleDebug.dependsOn(rootProject.setPostUrl)
+            }
+        }
+    }
+}

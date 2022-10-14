@@ -1,0 +1,19 @@
+<!--
+  ~ ic_baseline_menu_24.xml
+  ~
+  ~ Created by kimberlysweeney on 08-08-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<vector android:height="24dp" android:tint="#FFF"
+    android:viewportHeight="24" android:viewportWidth="24"
+    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@android:color/white" android:pathData="M3,18h18v-2L3,16v2zM3,13h18v-2L3,11v2zM3,6v2h18L21,6L3,6z"/>
+</vector>

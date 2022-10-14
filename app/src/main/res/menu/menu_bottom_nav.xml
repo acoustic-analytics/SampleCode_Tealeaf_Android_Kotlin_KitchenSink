@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ menu_bottom_nav.xml
+  ~
+  ~ Created by kimberlysweeney on 08-02-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_toolbars"
+        android:title="@string/bottom_navigation_view_toolbars"
+        android:icon="@drawable/ic_baseline_hammer_wrench_24"/>
+
+    <item
+        android:id="@+id/action_tabs"
+        android:title="@string/bottom_navigation_view_tabs"
+        android:icon="@drawable/ic_baseline_tab_24"/>
+
+    <item
+        android:id="@+id/action_appbars"
+        android:title="@string/bottom_navigation_view_appbars"
+        android:icon="@drawable/ic_baseline_material_24"/>
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/bottom_navigation_view_search"
+        android:icon="@drawable/ic_baseline_search_24"/>
+
+    <item android:id="@+id/action_extras"
+        android:title="@string/bottom_navigation_view_extras"
+        android:icon="@drawable/ic_baseline_widgets_24"/>
+
+</menu>

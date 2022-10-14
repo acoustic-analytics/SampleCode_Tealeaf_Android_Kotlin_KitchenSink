@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ menu_search.xml
+  ~
+  ~ Created by kimberlysweeney on 08-09-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:id="@+id/group_search">
+
+        <item
+            android:id="@+id/action_search"
+            android:icon="@drawable/ic_baseline_search_white_24"
+            android:title="@string/menu_search_title"
+            app:actionViewClass="android.widget.SearchView"
+            app:showAsAction="ifRoom|withText" />
+
+    </group>
+
+</menu>

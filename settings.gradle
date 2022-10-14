@@ -1,0 +1,19 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/${tealeafRepo}" }
+    }
+}
+rootProject.name = "TealeafKitchenSink"
+include ':app'

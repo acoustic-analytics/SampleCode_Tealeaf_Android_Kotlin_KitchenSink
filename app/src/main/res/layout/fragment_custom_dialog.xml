@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ fragment_custom_dialog.xml
+  ~
+  ~ Created by kimberlysweeney on 09-27-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogs_custom_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="24dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dialogs_custom_fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/dialogs_custom_fragment_title"
+        android:textAppearance="@android:style/TextAppearance.Material.Title"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/dialogs_custom_fragment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/dialogs_custom_fragment_text"
+        android:textAppearance="@android:style/TextAppearance.Material.Small" />
+
+    <TextView
+        android:id="@+id/dialogs_custom_fragment_first_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/dialogs_custom_fragment_first_item"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        app:drawableStartCompat="@drawable/logo_pinterest" />
+
+    <TextView
+        android:id="@+id/dialogs_custom_fragment_second_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/dialogs_custom_fragment_second_item"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        app:drawableStartCompat="@drawable/logo_telegram" />
+
+    <TextView
+        android:id="@+id/dialogs_custom_fragment_third_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/dialogs_custom_fragment_third_item"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        app:drawableStartCompat="@drawable/logo_linkedin" />
+
+</LinearLayout>

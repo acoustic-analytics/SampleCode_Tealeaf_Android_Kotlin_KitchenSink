@@ -1,0 +1,313 @@
+<resources>
+    <string name="app_name">Kitchen Sink</string>
+
+    <string name="bars_appbars_scrollview_title">Lorem Ipsum</string>
+    <string name="bars_appbars_title">Material AppBars</string>
+    <string name="bars_appbars_floating_action_button_content_description">add something</string>
+    <string name="bars_extras_title">Extras</string>
+    <string name="bars_search_no_results">No Results</string>
+    <string name="bars_toolbars_scrollview_title">Collapsing Toolbar</string>
+    <string name="bars_toolbars_image_content_description">toolbar background image</string>
+    <string name="bars_toolbars_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis quam quis mi vulputate, pulvinar maximus turpis volutpat. Mauris quis neque pulvinar, euismod nisi vel, iaculis ipsum. Nam molestie lacus at velit faucibus, a dignissim purus varius. Cras eget egestas odio, in posuere mi. Praesent facilisis placerat eros, quis pellentesque libero molestie quis. Nullam mattis consectetur tempus. Mauris accumsan sem id felis posuere bibendum. In hac habitasse platea dictumst. Suspendisse finibus in ex quis sagittis. Vivamus elementum tincidunt iaculis. Curabitur placerat rutrum nibh, dapibus ultricies orci congue non. Phasellus convallis dapibus nibh vitae faucibus. Donec convallis, urna eu fringilla facilisis, nulla odio ullamcorper sapien, nec sodales nisi velit vitae tortor. Phasellus aliquam metus ante, at molestie dui mollis et. Cras cursus, arcu eu facilisis cursus, libero quam rhoncus risus, in varius lorem nunc quis arcu. Aenean est quam, efficitur id ligula eu, venenatis commodo ipsum.
+        \n\nEtiam sollicitudin, nibh in vulputate pulvinar, diam mauris vehicula ex, non rutrum justo felis eu risus. Suspendisse justo tortor, facilisis a odio vel, vulputate suscipit nunc. Mauris in lacus sed tellus lacinia porta. Cras vitae lectus mauris. Mauris et posuere nulla. Duis non ligula urna. Nam vitae odio nec massa efficitur eleifend eget sit amet eros.
+        \n\nDonec viverra mauris diam, vel tincidunt elit hendrerit et. Cras interdum feugiat quam sit amet tempus. Pellentesque rutrum porta diam, at rhoncus augue vehicula in. Ut suscipit, sem at bibendum suscipit, lacus nunc imperdiet mi, vitae interdum turpis quam et arcu. Sed ut lacus et justo tincidunt iaculis nec sit amet nunc. Nam ultrices molestie nulla a finibus. Fusce pellentesque euismod pharetra. Phasellus aliquet dui sed augue dapibus condimentum at vitae mauris. Aliquam sit amet metus in augue vestibulum malesuada eu non ipsum.
+        \n\nPraesent tempus erat felis, nec suscipit augue sodales et. Proin porttitor felis ut diam suscipit fermentum. Pellentesque pretium dignissim sodales. Donec aliquet ligula venenatis, pretium purus eget, accumsan sapien. Donec metus nisi, faucibus at lacus vitae, sodales eleifend orci. Donec euismod gravida placerat. Cras scelerisque sit amet justo in lacinia. In quis aliquet turpis. Nullam aliquet eros a elementum fringilla. Suspendisse ornare risus id scelerisque accumsan. In ut fermentum augue, ac blandit tortor. Vestibulum sed lacus imperdiet, pharetra felis sit amet, feugiat mi. Nunc eget ante vel justo sollicitudin malesuada sed quis mi. Donec feugiat condimentum ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras vel tortor suscipit, finibus ex id, dictum nisl.
+    </string>
+
+    <string name="bottom_navigation_view_toolbars">Toolbars</string>
+    <string name="bottom_navigation_view_tabs">Tabs</string>
+    <string name="bottom_navigation_view_appbars">AppBars</string>
+    <string name="bottom_navigation_view_extras">Extras</string>
+    <string name="bottom_navigation_view_search">Search</string>
+
+    <string name="buttons_title">Buttons</string>
+    <string name="buttons_state_title">States</string>
+    <string name="button_state_enabled">Enabled</string>
+    <string name="button_state_disabled">Disabled</string>
+    <string name="button_state_selected">Selected</string>
+    <string name="buttons_variant_title">Variants</string>
+    <string name="button_contained">Default</string>
+    <string name="button_contained_icon">Default</string>
+    <string name="button_text">Text</string>
+    <string name="button_text_icon">Text</string>
+    <string name="button_outlined">Outlined</string>
+    <string name="button_outlined_icon">Outlined</string>
+    <string name="button_toggle_first">Toggle 1</string>
+    <string name="button_toggle_second">Toggle 2</string>
+    <string name="button_toggle_third">Toggle 3</string>
+    <string name="button_toggle_icon_like">Like</string>
+    <string name="button_toggle_icon_dislike">Dislike</string>
+    <string name="button_toggle_icon_share">Share</string>
+
+    <string name="calendar_view_title">Calendar View</string>
+    <string name="calendar_view_android_title">Android CalendarView</string>
+
+    <string name="checkboxes_title">Checkboxes</string>
+    <string name="checkbox_1">Checkbox 1</string>
+    <string name="checkbox_2">Checkbox 2</string>
+    <string name="checkbox_3">Checkbox 3</string>
+    <string name="checkbox_4">Checkbox 4</string>
+
+    <string name="chips_title">Chips</string>
+    <string name="chips_input_title">Input</string>
+    <string name="chip_input_1">Input 1</string>
+    <string name="chip_input_2">Input 2</string>
+    <string name="chip_input_3">Input 3</string>
+    <string name="chips_choice_title">Choice</string>
+    <string name="chip_choice_1">Choice 1</string>
+    <string name="chip_choice_2">Choice 2</string>
+    <string name="chip_choice_3">Choice 3</string>
+    <string name="chip_choice_4">Choice 4</string>
+    <string name="chips_filter_title">Filter</string>
+    <string name="chip_filter_1">Filter 1</string>
+    <string name="chip_filter_2">Filter 2</string>
+    <string name="chip_filter_3">Filter 3</string>
+    <string name="chip_filter_4">Filter 4</string>
+    <string name="chips_action_title">Action</string>
+    <string name="chip_action_1">Action 1</string>
+    <string name="chip_action_2">Action 2</string>
+    <string name="chip_action_3">Action 3</string>
+    <string name="chip_action_4">Action 4</string>
+
+    <string name="connections_title">Message Type 3</string>
+    <string name="connections_connection_without_error_title">Connection</string>
+    <string name="connections_important_note">NOTE: Messages will appear in the Android Studio Logcat.</string>
+    <string name="connections_connection_without_error_button">Generate Message</string>
+    <string name="connections_connection_with_error_title">Connection Exception (Type 6)</string>
+    <string name="connections_connection_with_error_button">Generate Message</string>
+
+    <string name="constraint_layout_title">Constraint Layouts</string>
+    <string name="constraint_layout_left_column_title">Social Media</string>
+    <string name="constraint_layout_right_column_title">Planets</string>
+
+    <string name="custom_events_fragment_label">Custom Events</string>
+    <string name="custom_events_title">Message Type 5</string>
+    <string name="custom_events_important_note">NOTE: Messages will appear in the Android Studio Logcat.</string>
+    <string name="custom_events_event_title">Custom Events</string>
+    <string name="custom_events_event_button">Generate Message</string>
+
+    <string name="date_pickers_title">Date Pickers</string>
+    <string name="date_pickers_standard_title">Standard</string>
+    <string name="date_pickers_standard_button">schedule a meeting</string>
+    <string name="date_pickers_range_title">Range</string>
+    <string name="date_pickers_range_button">book a flight</string>
+
+    <string name="dialogs_title">Dialogs</string>
+    <string name="dialog_alert_supporting_text">Urgent information</string>
+    <string name="dialog_alert_title">Alert</string>
+    <string name="dialog_confirmation_title">Confirmation</string>
+    <string name="dialog_fullscreen_title">Full-screen</string>
+    <string name="dialog_simple_title">Simple</string>
+    <string name="dialog_button_accept">Accept</string>
+    <string name="dialog_button_cancel">Cancel</string>
+    <string name="dialog_button_decline">Decline</string>
+    <string name="dialog_hint_password">Password</string>
+    <string name="dialog_hint_username">Username</string>
+    <string name="dialogs_auto_generated_layout">Auto-Generated</string>
+    <string name="dialogs_auto_generated_title">Auto Generated Alert</string>
+    <string name="dialogs_auto_generated_message">This is an example of using the Tealeaf SDK to show a simple alert.</string>
+    <string name="dialogs_user_generated_layout">User-Generated</string>
+    <string name="dialogs_user_generated_title">User Generated Alert</string>
+    <string name="dialogs_user_generated_message">This is an example of using the Tealeaf SDK to show an alert.</string>
+    <string name="dialogs_user_generated_positive_button">Dismiss</string>
+    <string name="dialogs_user_generated_negative_button">OK</string>
+    <string name="dialogs_auto_generated_button_text">OK</string>
+    <string name="dialogs_custom_fragment_layout">Custom Dialog Fragment</string>
+    <string name="dialogs_custom_fragment_title">Social Media Content</string>
+    <string name="dialogs_custom_fragment_text">This is an example of using the Tealeaf SDK to show a custom Dialog Fragment.</string>
+    <string name="dialogs_custom_fragment_first_item">Pinterest</string>
+    <string name="dialogs_custom_fragment_second_item">Telegram</string>
+    <string name="dialogs_custom_fragment_third_item">LinkedIn</string>
+    <string name="dialogs_custom_fragment_tag">CustomDialogFragment</string>
+
+    <string name="exceptions_fragment_label">Exceptions</string>
+    <string name="exceptions_title">Message Type 6</string>
+    <string name="exceptions_important_note">NOTE: Messages will appear in the Android Studio Logcat.  Unhandled exceptions will crash the app.  This is the expected behavior.</string>
+    <string name="exceptions_custom_exception_title">Custom Exceptions</string>
+    <string name="exceptions_custom_exception_button">Generate Message</string>
+    <string name="exceptions_arithmetic_exception_title">Arithmetic Exceptions</string>
+    <string name="exceptions_arithmetic_exception_button">Generate Message</string>
+    <string name="exceptions_unhandled_exception_title">Unhandled Exceptions</string>
+    <string name="exceptions_unhandled_exception_button">Generate Message</string>
+
+    <string name="floating_action_button">New Email</string>
+
+    <string name="frame_layout_title">Frame Layouts</string>
+    <string name="frame_layout_image_content_description">Picsum Photo</string>
+    <string name="frame_layout_image_caption">Picsum Photo</string>
+
+    <string name="grid_layout_title">Grid Layouts</string>
+    <string name="grid_layout_button1">button1</string>
+    <string name="grid_layout_button2">button2</string>
+    <string name="grid_layout_button3">button3</string>
+    <string name="grid_layout_button4">button4</string>
+    <string name="grid_layout_button5">button5</string>
+    <string name="grid_layout_button6">button6</string>
+    <string name="grid_layout_button7">button7</string>
+    <string name="grid_layout_button8">button8</string>
+    <string name="grid_layout_button9">button9</string>
+    <string name="grid_layout_button10">button10</string>
+    <string name="grid_layout_button11">button11</string>
+    <string name="grid_layout_button12">button12</string>
+
+    <string name="image_buttons_title">Image Buttons</string>
+    <string name="image_button_pinterest">Pinterest</string>
+    <string name="image_button_telegram">Telegram</string>
+    <string name="image_button_linkedin">LinkedIn</string>
+
+    <string name="image_views_title">Image Views</string>
+    <string name="image_view_glide">Glide Image View</string>
+    <string name="image_view_material">Material Image View</string>
+    <string name="image_view_shapeable">Shapeable Image View</string>
+    <string name="image_view_switcher">Switcher Image View</string>
+
+    <string name="landing_fragment_label">Kitchen Sink</string>
+    <string name="landing_fragment_detail_text_intro">%s\nHave Not Been Implemented</string>
+    <string name="landing_fragment_detail_button_intro">Let\'s Go</string>
+    <string name="landing_fragment_recyclerview_content_description">Landing Navigation List</string>
+
+    <string name="linear_layout_title">Linear Layouts</string>
+    <string name="linear_layout_horizontal_title">Horizontal</string>
+    <string name="linear_layout_vertical_title">Vertical</string>
+    <string name="linear_layout_image_content_description">user</string>
+    <string name="linear_layout_text_line_1">John Sample</string>
+    <string name="linear_layout_text_line_2">Android Developer</string>
+    <string name="linear_layout_text_line_3">email@address.com</string>
+
+    <string name="maps_title">Maps</string>
+    <string name="maps_location_button_content_description">go to location</string>
+
+    <string name="menus_title">Menus</string>
+    <string name="menu_option_1">Option 1</string>
+    <string name="menu_option_2">Option 2</string>
+    <string name="menu_option_3">Option 3</string>
+    <string name="menus_dropdown_title">Dropdown</string>
+    <string name="menu_dropdown_button_text">Select an Option</string>
+    <string name="menu_dropdown_button_content_description">select an option</string>
+    <string name="menus_exposed_title">Exposed</string>
+    <string name="menu_exposed_layout_hint">Select a Planet</string>
+    <string name="menu_search_title">Search</string>
+    <string name="menu_toolbars_share">Share</string>
+    <string name="menu_toolbars_download">Download</string>
+    <string name="menu_toolbars_like">Like</string>
+
+    <string name="nav_drawer_menu_item_events">Custom Events</string>
+    <string name="nav_drawer_menu_item_exceptions">Exceptions</string>
+    <string name="nav_drawer_menu_item_connections">Connections</string>
+    <string name="nav_drawer_menu_open">Open</string>
+    <string name="nav_drawer_menu_close">Close</string>
+
+    <string name="navigation_destination_label">{itemTitle}</string>
+    <string name="navigation_destination_goto_landing">Go to Landing Screen</string>
+
+    <string name="progress_views_title">Progress Views</string>
+    <string name="progress_circular_determinate_title">Circular progress indicator (determinate)</string>
+    <string name="progress_circular_indeterminate_title">Circular progress indicator (indeterminate)</string>
+    <string name="progress_linear_determinate_title">Linear progress indicator (determinate)</string>
+    <string name="progress_linear_indeterminate_title">Linear progress indicator (indeterminate)</string>
+
+    <string name="radio_groups_title">Radio Buttons</string>
+    <string name="radio_group_button_1">Label 1</string>
+    <string name="radio_group_button_2">Label 2</string>
+    <string name="radio_group_button_3">Label 3</string>
+    <string name="radio_group_button_4">Label 4</string>
+
+    <string name="ratings_bar_title">Rating Bars</string>
+
+    <string name="relative_layouts_title">Relative Layouts</string>
+    <string name="relative_layout_top_left">hearts</string>
+    <string name="relative_layout_top_right">clubs</string>
+    <string name="relative_layout_center">card</string>
+    <string name="relative_layout_bottom_left">spades</string>
+    <string name="relative_layout_bottom_right">diamonds</string>
+
+    <string name="seek_bar_title">Seek Bars</string>
+
+    <string name="scroll_views_title">Scroll Views</string>
+    <string name="scroll_views_horizontal_title">Horizontal</string>
+    <string name="scroll_views_nested_title">Nested</string>
+
+    <string name="sliders_title">Sliders</string>
+    <string name="sliders_continuous_title">Continuous</string>
+    <string name="slider_continuous_content_description">continuous slider</string>
+    <string name="slider_continuous_range_content_description">continuous range slider</string>
+    <string name="sliders_discrete_title">Discrete</string>
+    <string name="slider_discrete_content_description">discrete slider</string>
+    <string name="slider_discrete_range_content_description">discrete range slider</string>
+
+    <string name="snack_bar_title">Snack Bars</string>
+    <string name="snack_bar_button_text">Show Snackbar</string>
+    <string name="snack_bar_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ultricies felis. Suspendisse ornare tellus faucibus, dapibus elit eget, condimentum elit.</string>
+
+    <string name="spinners_title">Spinners</string>
+
+    <string name="switches_title">Switches</string>
+    <string name="switch_1">Toggle On</string>
+    <string name="switch_2">Toggle Off</string>
+
+    <string name="table_layout_title">Table Layouts</string>
+    <string name="table_layout_row_heading_column_1">Item</string>
+    <string name="table_layout_row_heading_column_2">Brand</string>
+    <string name="table_layout_row_heading_column_3">Price</string>
+    <string name="table_layout_item_1">Trail Blazer Solid</string>
+    <string name="table_layout_row_brand_1">Radical</string>
+    <string name="table_layout_price_1">184.95</string>
+    <string name="table_layout_item_2">Reality</string>
+    <string name="table_layout_brand_2">Global 900</string>
+    <string name="table_layout_price_2">174.99</string>
+    <string name="table_layout_item_3">Hussle USA</string>
+    <string name="table_layout_brand_3">Roto Grip</string>
+    <string name="table_layout_price_3">103.99</string>
+    <string name="table_layout_item_4">Viz-a-Ball</string>
+    <string name="table_layout_brand_4">Brunswick</string>
+    <string name="table_layout_price_4">95.99</string>
+
+    <string name="tabs_title">Tabs</string>
+    <string name="tabs_fixed_title">Fixed</string>
+    <string name="tabs_fixed_image_content_description">selected tab for fixed content</string>
+    <string name="tabs_fixed_tab_1">Kotlin</string>
+    <string name="tabs_fixed_tab_2">Java</string>
+    <string name="tabs_fixed_tab_3">Flutter</string>
+    <string name="tabs_scrollable_title">Scrollable</string>
+    <string name="tabs_scrollable_image_content_description">selected tab for scrollable content</string>
+
+    <string name="text_autocomplete_views_title">Autocomplete Text Views</string>
+
+    <string name="text_checked_views_title">Checked Text Views</string>
+
+    <string name="text_clock_title">Text Clocks</string>
+
+    <string name="text_edits_title">Edit Text Views</string>
+    <string name="text_edits_single_line_title">Single Line</string>
+    <string name="text_edit_single_line_hint">URL</string>
+    <string name="text_edit_single_line_submit">submit</string>
+    <string name="text_edit_multiline_title">Multiline</string>
+
+    <string name="text_fields_title">Text Fields</string>
+    <string name="text_fields_filled_title">Filled</string>
+    <string name="text_field_filled_hint">Movie</string>
+    <string name="text_fields_outlined_title">Outlined</string>
+
+    <string name="text_switchers_title">Text Switchers</string>
+    <string name="text_switcher_previous">Previous</string>
+    <string name="text_switcher_next">Next</string>
+
+    <string name="text_views_title">Text Views</string>
+    <string name="text_view_formatted_text">This is <i>italic</i>, <b>bold</b>, and <u>underlined</u> text.\nGo to <a href='http://material.io'>Material Design</a> to start using the new guidelines.</string>
+    <string name="text_view_h3_heading">H3 Heading</string>
+    <string name="text_view_h5_heading">H5 Heading</string>
+    <string name="text_view_body1">Body 1</string>
+    <string name="text_view_body2">Body 2</string>
+    <string name="text_view_layout_formatted_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+
+    <string name="time_pickers_title">Time Pickers</string>
+    <string name="time_pickers_button">pick meeting time</string>
+
+    <string name="web_double_button">WebView 2x</string>
+    <string name="web_double_title">Double Web View</string>
+    <string name="web_single_button">WebView 1x</string>
+    <string name="web_single_title">Single Web View</string>
+    <string name="web_views_title">WebViews</string>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ navdrawer_menu.xml
+  ~
+  ~ Created by kimbe on 04-08-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/customEventsFragment"
+        android:icon="@drawable/ic_baseline_phone_android_24"
+        android:title="@string/nav_drawer_menu_item_events" />
+
+    <item
+        android:id="@+id/exceptionsFragment"
+        android:icon="@drawable/ic_baseline_alert_circle_outline_24"
+        android:title="@string/nav_drawer_menu_item_exceptions" />
+
+    <item
+        android:id="@+id/connectionsFragment"
+        android:icon="@drawable/ic_baseline_web_check_24"
+        android:title="@string/nav_drawer_menu_item_connections" />
+
+</menu>

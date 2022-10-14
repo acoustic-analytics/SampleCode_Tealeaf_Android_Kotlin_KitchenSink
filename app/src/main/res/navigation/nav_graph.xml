@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ nav_graph.xml
+  ~
+  ~ Created by kimberlysweeney on 03-17-2022.
+  ~
+  ~ Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+  ~
+  ~ NOTICE: This file contains material that is confidential and proprietary to
+  ~ Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+  ~ industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+  ~ Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+  ~ prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LandingFragment">
+
+    <fragment
+        android:id="@+id/LandingFragment"
+        android:name="com.acoustic.tealeafkitchensink.landing.LandingFragment"
+        android:label="@string/landing_fragment_label"
+        tools:layout="@layout/fragment_landing">
+
+        <action
+            android:id="@+id/action_LandingFragment_to_landingDetailFragment"
+            app:destination="@id/landingDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/landingDetailFragment"
+        android:name="com.acoustic.tealeafkitchensink.landingdetail.LandingDetailFragment"
+        android:label="@string/navigation_destination_label">
+        <action
+            android:id="@+id/action_landingDetailFragment_to_LandingFragment"
+            app:destination="@id/LandingFragment" />
+        <argument
+            android:name="itemTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_landingDetailFragment_to_singleWebViewFragment"
+            app:destination="@id/singleWebViewFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/singleWebViewFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_landingDetailFragment_to_doubleWebViewFragment"
+            app:destination="@id/doubleWebViewFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/doubleWebViewFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_landingDetailFragment_to_dialogFullscreenFragment"
+            app:destination="@id/dialogFullscreenFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/dialogFullscreenFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customEventsFragment"
+        android:name="com.acoustic.tealeafkitchensink.CustomEventsFragment"
+        android:label="@string/custom_events_fragment_label"
+        tools:layout="@layout/fragment_custom_events" />
+
+    <fragment
+        android:id="@+id/exceptionsFragment"
+        android:name="com.acoustic.tealeafkitchensink.ExceptionsFragment"
+        android:label="@string/exceptions_fragment_label"
+        tools:layout="@layout/fragment_exceptions" />
+
+    <fragment
+        android:id="@+id/singleWebViewFragment"
+        android:name="com.acoustic.tealeafkitchensink.contentviews.SingleWebViewFragment"
+        android:label="@string/web_single_title" />
+
+    <fragment
+        android:id="@+id/doubleWebViewFragment"
+        android:name="com.acoustic.tealeafkitchensink.contentviews.DoubleWebViewFragment"
+        android:label="@string/web_double_title" />
+
+    <dialog
+        android:id="@+id/dialogFullscreenFragment"
+        android:name="com.acoustic.tealeafkitchensink.contentviews.DialogFullscreenFragment"
+        android:label="DialogFullscreenFragment" />
+
+    <fragment
+        android:id="@+id/connectionsFragment"
+        android:name="com.acoustic.tealeafkitchensink.ConnectionsFragment"
+        android:label="@string/connections_title" />
+
+</navigation>

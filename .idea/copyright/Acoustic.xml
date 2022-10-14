@@ -1,0 +1,6 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="&amp;#36;file.fileName&#10;&#10;Created by &amp;#36;username on &amp;#36;today.format(&quot;MM-dd-yyyy&quot;).&#10;&#10;Copyright (C) &amp;#36;today.year Acoustic, L.P. All rights reserved.&#10;&#10;NOTICE: This file contains material that is confidential and proprietary to&#10;Acoustic, L.P. and/or other developers. No license is granted under any intellectual or &#10;industrial property rights of Acoustic, L.P. except as may be provided in an agreement with&#10;Acoustic, L.P. Any unauthorized copying or distribution of content from this file is&#10;prohibited." />
+    <option name="myName" value="Acoustic" />
+  </copyright>
+</component>
