@@ -26,6 +26,16 @@ pipeline {
                 echo 'Set up settings..'
             }
         }
+        stage('Setup Release') {
+            when { branch 'master' }
+            steps {
+                echo 'Set up settings..'
+                script{
+                    createBuild("Release ${name} build")
+                    checkoutReleaseRepo()
+                }
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -42,8 +52,15 @@ pipeline {
             }
         }
         stage('Publish Release') {
+            when { branch 'master' }
             steps {
                 echo 'Publish Release....'
+                script{
+                    if (genBuild) {
+                        echo "Build release"
+                        publishRelease()
+                    }
+                }
             }
         }
     }
@@ -98,6 +115,117 @@ import java.text.SimpleDateFormat
 @Field def total             = 0
 @Field def failed            = 0
 @Field def skipped           = 0
+
+// Version stuff
+@Field def currentVersion   = "1.0.0"
+@Field def srcBranch        = "main"//"${env.GIT_BRANCH}"
+
+// Commit stuff
+@Field def commitDesciption = ""
+
+// Directory paths
+@Field def tempTestDir = "${name}Build"
+@Field def buildDir    = "${tempTestDir}/Tealeaf_Android_Kotlin_KitchenSink"
+@Field def releaseDir  = "${tempTestDir}/SampleCode_Tealeaf_Android_Kotlin_KitchenSink"
+// @Field def buildIosDir = "${testAppDir}/ios/derived"
+
+// Build information
+@Field def genBuild  = true
+
+def createBuild(findText) {
+    def resullt = hasTextBasedOnLastCommit(findText)
+
+    if (resullt == 0) {
+        genBuild = false
+    } else {
+        genBuild = true
+    }
+}
+
+def hasTextBasedOnLastCommit(findText) {
+    def resullt
+    
+    script {
+        resullt = sh (script:'''git log -1 | grep -c \"''' + findText + '''\"
+              ''', returnStatus: true)
+    }
+    return resullt
+}
+
+def checkoutReleaseRepo() {
+    // Setup temp directory for repos for publishing
+    echo "Create test push location: ${tempTestDir}"
+    cleanMkDir("${tempTestDir}")
+    runCMD("cd ${tempTestDir} && git clone git@github.com:aipoweredmarketer/Tealeaf_Android_Kotlin_KitchenSink.git -b master")
+    runCMD("cd ${tempTestDir} && git clone git@github.com:acoustic-analytics/SampleCode_Tealeaf_Android_Kotlin_KitchenSink.git -b main")
+}
+
+def runCMD(commnd) {
+    OUUUTTPT = sh (
+        script: "#!/bin/bash -l\n ${commnd}",
+        returnStdout: true
+    ).trim()
+    echo "${OUUUTTPT}"
+    return OUUUTTPT
+}
+
+def cleanMkDir(cmDir) {
+    removeDir(cmDir)
+    runCMD("mkdir -p ${cmDir}")
+}
+
+def removeDir(cmDir) {
+    def exists = fileExists "${cmDir}"
+    if (exists) {
+        runCMD("rm -rf ${cmDir}")
+    }
+}
+
+def publishRelease() {
+    echo "Clean up directory in public repo"
+    echo "cd ${releaseDir} && git rm -r ."
+    runCMD("cd ${releaseDir} && git rm -r .")
+    
+    echo "Copy over changes from beta to public repo"
+    echo "rsync -av --exclude='.git' ${buildDir}/ ${releaseDir}"
+    runCMD("rsync -av --exclude='.git' ${buildDir}/ ${releaseDir}")
+
+    updateDescription()
+    def commitMsg = "Release ${name} build: ${currentVersion}"
+    echo "push with:"
+    echo commitMsg
+    echo currentVersion
+    echo commitDesciption
+
+    // push repos
+    gitPush("${releaseDir}", commitMsg, currentVersion, srcBranch, commitDesciption)
+}
+
+def updateDescription() {
+    def commitDesciptionTitle = "Release ${name} Change Notes:"
+    commitDesciption = readFile "latestChanges"
+    commitDesciption = "${commitDesciptionTitle} \n" << commitDesciption
+    commitDesciption = commitDesciption.replaceAll("\"", "\'")
+}
+
+def gitPush(path, commitMsg, tagMsg, branch, commitMsg2) {
+    echo "Git Push for: ${path}"
+    runCMD('''cd \"''' + path + '''\" && git add . -A''')
+    runCMD('''cd \"''' + path + '''\" && git commit -a -m \"''' + commitMsg + '''\" -m \"''' + commitMsg2 + '''\"''')
+
+    // Tag repos
+    echo "Tag repos"
+    runCMD('''cd \"''' + path + '''\" && git tag -f \"''' + tagMsg + '''\" -m \"''' + commitMsg2 + '''\"''')
+
+    // Pull from git
+    echo "Pull from git"
+    runCMD('''cd \"''' + path + '''\" && git pull --rebase origin \"''' + branch + '''\"''')
+
+    // Push to git
+    echo "Push to git"
+    runCMD('''cd \"''' + path + '''\" && git push -f --tags''')
+    runCMD('''cd \"''' + path + '''\" && git push -f --set-upstream origin \"''' + branch + '''\"''')
+}
 
 def populateSlackMessageGlobalVariables() {
     getLastCommitMessage()
