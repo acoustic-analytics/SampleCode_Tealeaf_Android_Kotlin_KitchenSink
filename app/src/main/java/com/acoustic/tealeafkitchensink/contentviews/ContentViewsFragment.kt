@@ -31,6 +31,7 @@ import com.acoustic.tealeafkitchensink.databinding.FragmentContentViewsBinding
 import com.acoustic.tealeafkitchensink.landingdetail.LandingDetailClickHandler
 import com.acoustic.tealeafkitchensink.landingdetail.LandingDetailFragmentDirections
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tl.uic.Tealeaf
 import com.tl.uic.util.DialogUtil
@@ -219,7 +220,12 @@ class ContentViewsFragment : Fragment(), MenuProvider {
             val title = getString(R.string.dialogs_auto_generated_title)
             val message = getString(R.string.dialogs_auto_generated_message)
             //To instrument when the dialog is shown, use a custom method to show the dialog.
-            DialogUtil.showDialog(context, title, message, getString(R.string.dialogs_auto_generated_button_text))
+            DialogUtil.showDialog(
+                context,
+                title,
+                message,
+                getString(R.string.dialogs_auto_generated_button_text)
+            )
         }
 
         // This is an example of instantiating an Alert Dialog which contains user-specified parameters
@@ -243,11 +249,42 @@ class ContentViewsFragment : Fragment(), MenuProvider {
         // instrument user interaction.
         binding.contentDialogs.dialogsCustomFragmentLayout.setOnClickListener {
             val dialogFragment = CustomDialogFragment()
-            dialogFragment.show(requireActivity().supportFragmentManager, getString(R.string.dialogs_custom_fragment_tag))
+            dialogFragment.show(
+                requireActivity().supportFragmentManager,
+                getString(R.string.dialogs_custom_fragment_tag)
+            )
         }
 
+        // Sheet views setup
+        val standardBottomSheetBehavior =
+            BottomSheetBehavior.from(binding.contentSheetBottomStandard.root)
 
+        binding.contentSheetBottomStandard.sheetBottomStandardActionButton.setOnClickListener {
+            clickHandler?.showToast("Bottom sheet action 1 clicked")
+        }
 
+        binding.contentSheetBottomStandard.sheetBottomStandardTitle.setOnClickListener {
+            standardBottomSheetBehavior.state =
+                if (standardBottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                    BottomSheetBehavior.STATE_COLLAPSED
+                } else {
+                    BottomSheetBehavior.STATE_EXPANDED
+                }
+        }
+
+        binding.contentSheetViews.sheetBottomStandardButton.setOnClickListener {
+            standardBottomSheetBehavior.state =
+                if (standardBottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                    BottomSheetBehavior.STATE_COLLAPSED
+                } else {
+                    BottomSheetBehavior.STATE_EXPANDED
+                }
+        }
+
+        binding.contentSheetViews.sheetBottomModalButton.setOnClickListener {
+            val modalBottomSheet = ModalBottomSheetFragment()
+            modalBottomSheet.show(requireActivity().supportFragmentManager, ModalBottomSheetFragment.TAG)
+        }
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

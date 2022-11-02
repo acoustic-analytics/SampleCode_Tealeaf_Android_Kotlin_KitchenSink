@@ -29,37 +29,48 @@
         android:paddingBottom="24dp">
 
         <TextView
-            android:id="@+id/dialogs_title"
+            android:id="@+id/sheet_views_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
-            android:text="@string/dialogs_title"
+            android:text="@string/sheet_views_title"
             android:textAppearance="@android:style/TextAppearance.Material.Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/sheet_views_bottom_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="@string/sheet_views_bottom_title"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sheet_views_title" />
+
         <Button
-            android:id="@+id/button_alert_layout"
+            android:id="@+id/sheet_bottom_standard_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dialog_alert_title"
-            app:layout_constraintEnd_toStartOf="@+id/button_simple_layout"
+            android:text="@string/sheet_bottom_standard_button"
+            app:layout_constraintEnd_toStartOf="@+id/sheet_bottom_modal_button"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dialogs_title" />
+            app:layout_constraintTop_toBottomOf="@id/sheet_views_bottom_title" />
 
         <Button
-            android:id="@+id/button_simple_layout"
+            android:id="@+id/sheet_bottom_modal_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dialog_simple_title"
+            android:text="@string/sheet_bottom_modal_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/button_alert_layout"
-            app:layout_constraintTop_toBottomOf="@id/dialogs_title" />
+            app:layout_constraintStart_toEndOf="@+id/sheet_bottom_standard_button"
+            app:layout_constraintTop_toBottomOf="@id/sheet_views_bottom_title" />
 
-        <Button
+        <!--<Button
             android:id="@+id/button_confirmation_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,36 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/button_confirmation_layout"
-            app:layout_constraintTop_toBottomOf="@id/button_simple_layout" />
-
-        <Button
-            android:id="@+id/dialogs_auto_generated_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialogs_auto_generated_layout"
-            app:layout_constraintEnd_toStartOf="@+id/button_fullscreen_layout"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_confirmation_layout" />
-
-        <Button
-            android:id="@+id/dialogs_user_generated_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialogs_user_generated_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/dialogs_auto_generated_layout"
-            app:layout_constraintTop_toBottomOf="@id/button_fullscreen_layout" />
-
-        <Button
-            android:id="@+id/dialogs_custom_fragment_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialogs_custom_fragment_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dialogs_auto_generated_layout" />
+            app:layout_constraintTop_toBottomOf="@id/button_simple_layout" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

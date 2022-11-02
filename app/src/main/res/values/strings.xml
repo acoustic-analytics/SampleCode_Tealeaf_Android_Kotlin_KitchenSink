@@ -228,6 +228,18 @@
     <string name="scroll_views_horizontal_title">Horizontal</string>
     <string name="scroll_views_nested_title">Nested</string>
 
+    <string name="sheet_bottom_modal_action_1_button">Action 1</string>
+    <string name="sheet_bottom_modal_action_2_button">Action 2</string>
+    <string name="sheet_bottom_modal_supporting_text">Modal bottom sheets present a set of choices while blocking interaction with the rest of the screen. They are an alternative to inline menus and simple dialogs on mobile, providing additional room for content, iconography, and actions.</string>
+    <string name="sheet_bottom_modal_title">Modal bottom sheet</string>
+    <string name="sheet_bottom_standard_action_button">Action 1</string>
+    <string name="sheet_bottom_standard_button">Standard</string>
+    <string name="sheet_bottom_standard_supporting_text">Standard bottom sheets co-exist with the screen’s main UI region and allow for simultaneously viewing and interacting with both regions. They are commonly used to keep a feature or secondary content visible on screen when content in main UI region is frequently scrolled or panned.</string>
+    <string name="sheet_bottom_standard_title">Standard bottom sheet</string>
+    <string name="sheet_bottom_modal_button">Modal</string>
+    <string name="sheet_views_bottom_title">Bottom</string>
+    <string name="sheet_views_title">Sheets</string>
+
     <string name="sliders_title">Sliders</string>
     <string name="sliders_continuous_title">Continuous</string>
     <string name="slider_continuous_content_description">continuous slider</string>
@@ -309,5 +321,9 @@
     <string name="web_single_button">WebView 1x</string>
     <string name="web_single_title">Single Web View</string>
     <string name="web_views_title">WebViews</string>
+
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        YOUR_GOOGLE_MAPS_KEY
+    </string>
 
 </resources>
