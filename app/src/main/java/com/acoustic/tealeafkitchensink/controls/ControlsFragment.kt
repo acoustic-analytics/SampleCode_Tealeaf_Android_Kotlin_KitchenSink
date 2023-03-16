@@ -18,6 +18,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -26,6 +27,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.annotation.MenuRes
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.app.ActivityCompat
 import androidx.core.util.Pair
@@ -48,6 +50,10 @@ import com.google.android.material.timepicker.TimeFormat
 import com.tl.uic.Tealeaf
 import com.tl.uic.util.DialogLogScreenTask
 import com.tl.uic.util.TaskRunner
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
+import java.util.*
 
 
 class ControlsFragment: Fragment(), MenuProvider, OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -65,6 +71,7 @@ class ControlsFragment: Fragment(), MenuProvider, OnMapReadyCallback, ActivityCo
 
     private var clickHandler: LandingDetailClickHandler? = null
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -72,7 +79,7 @@ class ControlsFragment: Fragment(), MenuProvider, OnMapReadyCallback, ActivityCo
 
         binding = FragmentControlsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val meetingDateBuilder = MaterialDatePicker.Builder.datePicker()
@@ -86,10 +93,50 @@ class ControlsFragment: Fragment(), MenuProvider, OnMapReadyCallback, ActivityCo
             Tealeaf.logCustomEvent("MeetingDatePickerCancel")
         }
 
+        val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        calendar[Calendar.MONTH] = Calendar.JANUARY
+        calendar[Calendar.YEAR] = 2023
+        calendar[Calendar.DAY_OF_MONTH] = 1
+        val startDateBegin = calendar.timeInMillis
+        calendar[Calendar.DAY_OF_MONTH] = 10
+        val startDateEnd = calendar.timeInMillis
+
         val flightDateBuilder = MaterialDatePicker.Builder.dateRangePicker()
-                .setTitleText("Select dates")
-                .setSelection(Pair(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds()))
+                .setTitleText("Select Dates")
+                .setSelection(Pair(startDateBegin, startDateEnd))
         val flightDatePicker: MaterialDatePicker<Pair<Long, Long>> = flightDateBuilder.build()
+
+        flightDatePicker.addOnPositiveButtonClickListener { range ->
+
+            var startDate: String? = null
+            var endDate: String? = null
+            range.first?.let { start ->
+                range.second?.let { end ->
+
+                    val calendarStart = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply { timeInMillis = start }
+                    val calendarEnd = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply { timeInMillis = end }
+
+                    val startYear = calendarStart.get(Calendar.YEAR)
+                    val startMonth = calendarStart.get(Calendar.MONTH) + 1
+                    val startDay = calendarStart.get(Calendar.DAY_OF_MONTH)
+                    startDate = "$startMonth/$startDay/$startYear"
+
+                    val endYear = calendarEnd.get(Calendar.YEAR)
+                    val endMonth = calendarEnd.get(Calendar.MONTH) + 1
+                    val endDay = calendarEnd.get(Calendar.DAY_OF_MONTH)
+                    endDate = "$endMonth/$endDay/$endYear"
+
+                }
+            }
+
+            binding.contentDatePickers.datePickersRangeText.text = String.format(getString(R.string.date_pickers_range_text), startDate, endDate)
+            binding.contentDatePickers.datePickersRangeText.visibility = View.VISIBLE
+
+        }
+
+        flightDatePicker.addOnCancelListener {
+            binding.contentDatePickers.datePickersRangeText.visibility = View.GONE
+        }
 
         val timePickerBuilder = MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_12H)
@@ -172,9 +219,16 @@ class ControlsFragment: Fragment(), MenuProvider, OnMapReadyCallback, ActivityCo
         }
 
         return binding.root
-
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun localDateFromTimestamp(timestamp: Long): LocalDate = Instant.ofEpochMilli(timestamp)
+        .atZone(ZoneId.systemDefault())
+        .toLocalDate()
 
     private fun goToLocation(googleMap: GoogleMap) {
         googleMap.addMarker(

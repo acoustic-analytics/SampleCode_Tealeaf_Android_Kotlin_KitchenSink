@@ -76,6 +76,12 @@
     <string name="connections_connection_without_error_button">Generate Message</string>
     <string name="connections_connection_with_error_title">Connection Exception (Type 6)</string>
     <string name="connections_connection_with_error_button">Generate Message</string>
+    <string name="connections_connection_http_url_title">HttpUrl Auto Connection</string>
+    <string name="connections_connection_http_url_button">Generate Message</string>
+    <string name="connections_connection_okhttp_title">OKHttp Auto Connection</string>
+    <string name="connections_connection_okhttp_button">Generate Message</string>
+    <string name="connections_connection_volley_title">Volley Connection</string>
+    <string name="connections_connection_volley_button">Generate Message</string>
 
     <string name="constraint_layout_title">Constraint Layouts</string>
     <string name="constraint_layout_left_column_title">Social Media</string>
@@ -92,6 +98,7 @@
     <string name="date_pickers_standard_button">schedule a meeting</string>
     <string name="date_pickers_range_title">Range</string>
     <string name="date_pickers_range_button">book a flight</string>
+    <string name="date_pickers_range_text">Your flight is scheduled from %1$s to %2$s</string>
 
     <string name="dialogs_title">Dialogs</string>
     <string name="dialog_alert_supporting_text">Urgent information</string>
@@ -161,6 +168,7 @@
     <string name="image_view_material">Material Image View</string>
     <string name="image_view_shapeable">Shapeable Image View</string>
     <string name="image_view_switcher">Switcher Image View</string>
+    <string name="image_view_pinch_zoom">Pinch/Zoom Image View</string>
 
     <string name="landing_fragment_label">Kitchen Sink</string>
     <string name="landing_fragment_detail_text_intro">%s\nHave Not Been Implemented</string>
@@ -175,6 +183,17 @@
     <string name="linear_layout_text_line_2">Android Developer</string>
     <string name="linear_layout_text_line_3">email@address.com</string>
 
+    <string name="login_title_activity">TealeafKitchenSink</string>
+    <string name="login_title">Log In</string>
+    <string name="login_info">NOTE: The fields below do not get verified so any valid email and password which contains more than 5 characters will activate the sign in button. Values are provided as hints in each of the fields that can be used successfully.</string>
+    <string name="login_prompt_email">Email = email@address.com</string>
+    <string name="login_prompt_password">Password = abcd123</string>
+    <string name="login_action_sign_in">Sign in or register</string>
+    <string name="login_action_sign_in_short">Sign in</string>
+    <string name="login_welcome">"Welcome %s!"</string>
+    <string name="login_invalid_username">Not a valid username</string>
+    <string name="login_invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
     <string name="maps_title">Maps</string>
     <string name="maps_location_button_content_description">go to location</string>
 
@@ -322,7 +341,7 @@
     <string name="web_single_title">Single Web View</string>
     <string name="web_views_title">WebViews</string>
 
-    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         YOUR_GOOGLE_MAPS_KEY
     </string>
 

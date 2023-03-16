@@ -15,6 +15,8 @@
 package com.acoustic.tealeafkitchensink.landing
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.*
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
@@ -46,11 +48,12 @@ class LandingFragment : Fragment(), MenuProvider {
         _binding = FragmentLandingBinding.inflate(inflater, container, false)
 
         val viewModelFactory = LandingViewModelFactory()
-        val landingViewModel = ViewModelProvider(this, viewModelFactory).get(LandingViewModel::class.java)
+        val landingViewModel =
+            ViewModelProvider(this, viewModelFactory)[LandingViewModel::class.java]
 
         binding.landingViewModel = landingViewModel
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val adapter = LandingAdapter(LandingClickListener { itemId ->
@@ -70,9 +73,13 @@ class LandingFragment : Fragment(), MenuProvider {
         // Add an Observer on the state variable for Navigating when an item is clicked.
         landingViewModel.navigateToLandingDetail.observe(viewLifecycleOwner, Observer { item ->
             item?.let {
-                this.findNavController().navigate(
-                    LandingFragmentDirections.actionLandingFragmentToLandingDetailFragment(item))
-                landingViewModel.onLandingDetailNavigated()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    this.findNavController().navigate(
+                        LandingFragmentDirections.actionLandingFragmentToLandingDetailFragment(item)
+                    )
+                    landingViewModel.onLandingDetailNavigated()
+                }, 500)
+
             }
         })
 
@@ -86,7 +93,10 @@ class LandingFragment : Fragment(), MenuProvider {
         binding.recyclerView.addItemDecoration(dividerItemDecoration)
 
         return binding.root
+    }
 
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onDestroyView() {

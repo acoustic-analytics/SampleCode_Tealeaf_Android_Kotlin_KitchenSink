@@ -26,7 +26,6 @@ import com.acoustic.tealeafkitchensink.R
 import com.acoustic.tealeafkitchensink.databinding.FragmentButtonsBinding
 import com.acoustic.tealeafkitchensink.landingdetail.LandingDetailClickHandler
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.tl.uic.Tealeaf
 
 /**
  * A simple [Fragment] subclass.
@@ -45,7 +44,7 @@ class ButtonsFragment : Fragment(), MenuProvider {
 
         binding = FragmentButtonsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         clickHandler = context?.let { LandingDetailClickHandler(it) }
@@ -57,7 +56,7 @@ class ButtonsFragment : Fragment(), MenuProvider {
                     view.setOnClickListener {
                         clickHandler?.showToast("${view.text} has been clicked")
                         /** start: manually instrument event capture when a view is clicked **/
-                        Tealeaf.logEvent(view)
+//                        Tealeaf.logEvent(view)
                         /** end: manually instrument event capture **/
                     }
                 }
@@ -75,7 +74,12 @@ class ButtonsFragment : Fragment(), MenuProvider {
                 }
             }
         }
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

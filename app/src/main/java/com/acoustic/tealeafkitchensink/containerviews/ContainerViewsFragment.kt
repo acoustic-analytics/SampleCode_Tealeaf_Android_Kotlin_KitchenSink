@@ -52,7 +52,7 @@ class ContainerViewsFragment : Fragment(), MenuProvider {
 
         binding = FragmentContainerViewsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         mPlanets = resources.getStringArray(R.array.planets_array)
@@ -98,6 +98,10 @@ class ContainerViewsFragment : Fragment(), MenuProvider {
         button.layoutParams = params
         view.addView(button)
         if (index == 10) button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

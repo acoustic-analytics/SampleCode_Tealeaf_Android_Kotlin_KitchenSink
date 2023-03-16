@@ -74,18 +74,6 @@ class LandingDetailFragment : Fragment() {
                 setCurrentFragment(containerViewsFragment, "ContainerViews")
             }
         }
-        /** start: manual instrumentation for capturing the screenview
-         * This is not needed as the current screen showld automatically be captured in replay
-         * However, if you require defined results (e.g., Fragment name), the following code block will be helpful
-         */
-//        Tealeaf.logScreenview(
-//            requireActivity(),
-//            args.itemTitle,
-//            ScreenviewType.LOAD
-//        )
-//        val fragmentName = args.itemTitle.replace("\\s".toRegex(), "") + "Fragment"
-//        Tealeaf.onResumeFragment(requireActivity(), args.itemTitle, fragmentName)
-        /** end: manual instrumentation **/
 
     }
 

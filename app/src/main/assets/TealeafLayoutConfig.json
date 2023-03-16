@@ -9,24 +9,89 @@
       "CaptureUserEvents": true,
       "CaptureScreenVisits": true,
       "CaptureLayoutOn": 2,
-      "CaptureScreenshotOn": 1,
+      "CaptureScreenshotOn": 2,
       "Masking": {
-        "HasMasking": false,
-        "HasCustomMask": false,
+        "HasMasking": true,
+        "HasCustomMask": true,
         "Sensitive": {
           "capitalCaseAlphabet": "X",
           "number": "9",
           "smallCaseAlphabet": "x",
           "symbol": "#"
         },
-        "MaskIdList": [],
-        "MaskValueList": []
+        "MaskAccessibilityLabelList": [
+        ]
       }
     },
-
+    "LoginActivity": {
+      "ScreenChange": true,
+      "DisplayName": "LoginActivity",
+      "CaptureLayoutOn": 2,
+      "Masking": {
+        "HasMasking": true,
+        "HasCustomMask": true,
+        "Sensitive": {
+          "capitalCaseAlphabet": "X",
+          "number": "9",
+          "smallCaseAlphabet": "x",
+          "symbol": "#"
+        },
+        "MaskIdList": [
+          "password"
+        ],
+        "MaskValueList": [],
+        "MaskAccessibilityIdList": [
+        ],
+        "MaskAccessibilityLabelList": [
+          "Email = email@address.com",
+          "login"
+        ]
+      }
+    },
     "MainActivity": {
       "ScreenChange": true,
       "DisplayName": "MainActivity",
+      "CaptureLayoutOn": 0,
+      "CaptureScreenshotOn": 0
+    },
+    "LandingFragment": {
+      "DisplayName": "Landing",
+      "CaptureLayoutDelay": 500
+    },
+    "BarsFragment": {
+      "DisplayName": "Bars",
+      "CaptureDelayLayout": 500
+    },
+    "ButtonsFragment": {
+      "DisplayName": "Buttons",
+      "CaptureDelayLayout": 500
+    },
+    "ContainerViewsFragment": {
+      "DisplayName": "Containers",
+      "CaptureDelayLayout": 500
+    },
+    "ContentViewsFragment": {
+      "DisplayName": "Contents",
+      "CaptureDelayLayout": 500
+    },
+    "ControlsFragment": {
+      "DisplayName": "Controls",
+      "CaptureDelayLayout": 700
+    },
+    "TextViewsFragment": {
+      "DisplayName": "TextViews",
+      "CaptureDelayLayout": 500
+    },
+    "ConnectionsFragment": {
+      "DisplayName": "Connections",
+      "CaptureLayoutDelay": 200
+    },
+    "CustomEventsFragment": {
+      "DisplayName": "Custom Events",
+      "CaptureLayoutDelay": 500
+    },
+    "ExceptionsFragment": {
+      "DisplayName": "Exceptions",
       "CaptureLayoutDelay": 500
     }
   },

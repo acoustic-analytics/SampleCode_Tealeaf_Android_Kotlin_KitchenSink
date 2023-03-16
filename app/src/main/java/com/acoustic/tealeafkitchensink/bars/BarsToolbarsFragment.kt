@@ -47,7 +47,7 @@ class BarsToolbarsFragment : Fragment(), MenuProvider {
 
         binding = FragmentBarsToolbarsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         mToolbar = binding.barsToolbarsToolbar

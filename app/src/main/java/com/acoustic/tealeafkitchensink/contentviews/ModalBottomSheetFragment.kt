@@ -18,11 +18,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.MenuHost
-import androidx.lifecycle.Lifecycle
-import com.acoustic.tealeafkitchensink.R
 import com.acoustic.tealeafkitchensink.databinding.ContentSheetBottomModalBinding
-import com.acoustic.tealeafkitchensink.databinding.FragmentContentViewsBinding
 import com.acoustic.tealeafkitchensink.landingdetail.LandingDetailClickHandler
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

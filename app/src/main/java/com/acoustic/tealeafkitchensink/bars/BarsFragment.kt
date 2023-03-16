@@ -65,6 +65,10 @@ class BarsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
     private fun setCurrentFragment(fragment:Fragment) =
         requireActivity().supportFragmentManager.beginTransaction().apply {
             replace(R.id.bars_frame_layout,fragment)

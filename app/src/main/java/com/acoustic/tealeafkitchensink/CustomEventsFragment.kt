@@ -34,7 +34,7 @@ class CustomEventsFragment : Fragment(), MenuProvider {
 
         binding = FragmentCustomEventsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val data = HashMap<String, String>()
@@ -46,7 +46,10 @@ class CustomEventsFragment : Fragment(), MenuProvider {
         }
 
         return binding.root
+    }
 
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

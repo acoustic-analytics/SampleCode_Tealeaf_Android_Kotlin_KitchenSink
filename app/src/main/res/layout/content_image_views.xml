@@ -61,6 +61,27 @@
             app:layout_constraintTop_toBottomOf="@id/image_view_material_title" />
 
         <TextView
+            android:id="@+id/photo_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="@string/image_view_pinch_zoom"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view_material_layout" />
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/photo_view"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/photo_view_title"/>
+
+        <TextView
             android:id="@+id/image_view_glide_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +91,7 @@
             android:textAppearance="@android:style/TextAppearance.Material.Subhead"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_view_material_layout" />
+            app:layout_constraintTop_toBottomOf="@id/photo_view" />
 
         <ImageView
             android:id="@+id/image_view_glide_layout"

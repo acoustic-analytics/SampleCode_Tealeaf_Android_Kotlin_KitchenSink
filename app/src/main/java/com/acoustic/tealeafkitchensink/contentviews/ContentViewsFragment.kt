@@ -14,6 +14,7 @@
 
 package com.acoustic.tealeafkitchensink.contentviews
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
 import android.os.Handler
@@ -31,10 +32,12 @@ import com.acoustic.tealeafkitchensink.databinding.FragmentContentViewsBinding
 import com.acoustic.tealeafkitchensink.landingdetail.LandingDetailClickHandler
 import com.acoustic.tealeafkitchensink.landingdetail.LandingDetailFragmentDirections
 import com.bumptech.glide.Glide
+import com.github.chrisbanes.photoview.PhotoView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tl.uic.Tealeaf
 import com.tl.uic.util.DialogUtil
+
 
 /**
  * A simple [Fragment] subclass.
@@ -46,13 +49,15 @@ class ContentViewsFragment : Fragment(), MenuProvider {
     private lateinit var binding: FragmentContentViewsBinding
     private var clickHandler: LandingDetailClickHandler? = null
 
+    private lateinit var mScaleGestureDetector: ScaleGestureDetector
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentContentViewsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         clickHandler = context?.let { LandingDetailClickHandler(it) }
@@ -60,6 +65,7 @@ class ContentViewsFragment : Fragment(), MenuProvider {
         return binding.root
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -285,6 +291,14 @@ class ContentViewsFragment : Fragment(), MenuProvider {
             val modalBottomSheet = ModalBottomSheetFragment()
             modalBottomSheet.show(requireActivity().supportFragmentManager, ModalBottomSheetFragment.TAG)
         }
+
+        val photoView = binding.contentImageViews.photoView as PhotoView
+        photoView.setImageResource(R.drawable.pexels_scotland_castle)
+
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -304,4 +318,5 @@ class ContentViewsFragment : Fragment(), MenuProvider {
         private const val imageUrl: String =
             "https://upload.wikimedia.org/wikipedia/commons/4/45/Law_Courts_during_blue_hour%2C_Christchurch%2C_New_Zealand.jpg"
     }
+
 }

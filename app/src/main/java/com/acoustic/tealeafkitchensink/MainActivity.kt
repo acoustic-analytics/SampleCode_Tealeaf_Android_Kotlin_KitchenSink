@@ -18,6 +18,8 @@ import android.os.Bundle
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
@@ -40,9 +42,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var tealeaf = Tealeaf(application)
-        Tealeaf.enable()
-
         //get drawer layout and add listener for capturing open/close events
         //the actionBarDrawerToggle will be used to automatically capture the events
         setSupportActionBar(binding.toolbar)
@@ -64,12 +63,12 @@ class MainActivity : AppCompatActivity() {
             if(nd.id == nc.graph.startDestinationId) {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
                 /** start: manually capture open event in replay **/
-                Tealeaf.logEvent(drawerLayout, "OnDrawerOpened")
+//                Tealeaf.logEvent(drawerLayout, "OnDrawerOpened")
                 /** end: manually capture open event **/
             } else {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
                 /** start: manually capture close event in replay **/
-                Tealeaf.logEvent(drawerLayout, "OnDrawerClosed")
+//                Tealeaf.logEvent(drawerLayout, "OnDrawerClosed")
                 /** end: manually capture close event **/
             }
         }
@@ -77,7 +76,15 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
+    }
 
+    private fun getVisibleFragment(): Fragment? {
+        val fragmentManager: FragmentManager = this@MainActivity.supportFragmentManager
+        val fragments: List<Fragment> = fragmentManager.fragments
+        for (fragment in fragments) {
+            if (fragment.isVisible) return fragment
+        }
+        return null
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -89,5 +96,4 @@ class MainActivity : AppCompatActivity() {
         Tealeaf.dispatchTouchEvent(this, e)
         return super.dispatchTouchEvent(e)
     }
-
 }

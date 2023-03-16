@@ -46,7 +46,7 @@ class BarsSearchFragment : Fragment(), MenuProvider {
 
         binding = FragmentBarsSearchBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val searchList = binding.barsSearchList

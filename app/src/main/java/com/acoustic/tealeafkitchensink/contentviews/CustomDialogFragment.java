@@ -18,12 +18,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
 import com.acoustic.tealeafkitchensink.R;
 import com.tl.uic.Tealeaf;
 import com.tl.uic.util.TLFDialogFragment;
+
+import java.util.Objects;
 
 public class CustomDialogFragment extends TLFDialogFragment {
 
@@ -41,7 +44,20 @@ public class CustomDialogFragment extends TLFDialogFragment {
             activity = activity.getParent();
         }
 
+        TextView pinterest = view.findViewById(R.id.dialogs_custom_fragment_first_item);
+        setListener(pinterest);
+
+        TextView telegram = view.findViewById(R.id.dialogs_custom_fragment_second_item);
+        setListener(telegram);
+
+        TextView linkedin = view.findViewById(R.id.dialogs_custom_fragment_third_item);
+        setListener(linkedin);
+
         Tealeaf.logScreenLayoutSetOnShowListener(requireActivity(), requireDialog(), "CustomDialogFragment", false);
+    }
+
+    private void setListener(TextView view) {
+        view.setOnClickListener(v -> Objects.requireNonNull(getDialog()).dismiss());
     }
 
 

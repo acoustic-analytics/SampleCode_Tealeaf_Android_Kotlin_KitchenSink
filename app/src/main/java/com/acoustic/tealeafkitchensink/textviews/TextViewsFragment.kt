@@ -52,7 +52,7 @@ class TextViewsFragment: Fragment(), MenuProvider {
 
         binding = FragmentTextViewsBinding.inflate(inflater, container, false)
 
-        val menuHost: MenuHost = requireActivity()
+        val menuHost: MenuHost = host as MenuHost
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         mPlanets = resources.getStringArray(R.array.planets_array)
@@ -114,7 +114,10 @@ class TextViewsFragment: Fragment(), MenuProvider {
         }
 
         return binding.root
+    }
 
+    override fun onResume() {
+        super.onResume()
     }
 
     private fun textSwitcherAnimate(textSwitcher: TextSwitcher, direction: Int) {
