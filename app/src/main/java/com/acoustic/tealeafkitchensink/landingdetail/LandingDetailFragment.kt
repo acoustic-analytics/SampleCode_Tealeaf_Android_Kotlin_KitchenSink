@@ -27,7 +27,11 @@ import com.acoustic.tealeafkitchensink.containerviews.ContainerViewsFragment
 import com.acoustic.tealeafkitchensink.contentviews.ContentViewsFragment
 import com.acoustic.tealeafkitchensink.controls.ControlsFragment
 import com.acoustic.tealeafkitchensink.databinding.FragmentLandingDetailBinding
+import com.acoustic.tealeafkitchensink.notlogged.NotLoggedFragment
 import com.acoustic.tealeafkitchensink.textviews.TextViewsFragment
+import com.ibm.eo.EOCore
+import com.tl.uic.Tealeaf
+import com.tl.uic.TealeafEOLifecycleObject
 
 class LandingDetailFragment : Fragment() {
 
@@ -39,6 +43,7 @@ class LandingDetailFragment : Fragment() {
     private val controlsFragment = ControlsFragment()
     private val textViewsFragment = TextViewsFragment()
     private val containerViewsFragment = ContainerViewsFragment()
+    private val notLoggedFragment = NotLoggedFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,8 +78,16 @@ class LandingDetailFragment : Fragment() {
             args.itemTitle.lowercase() == "container views" -> {
                 setCurrentFragment(containerViewsFragment, "ContainerViews")
             }
+            args.itemTitle.lowercase() == "fragment not logged" -> {
+                // Disable automatic fragment logging
+                EOCore.updateConfig(
+                    Tealeaf.TLF_Enable_Fragment_Life_Cycle_Listener,
+                    "false",
+                    TealeafEOLifecycleObject.getInstance()
+                )
+                setCurrentFragment(notLoggedFragment, "This Fragment Is Not Logged")
+            }
         }
-
     }
 
     private fun setCurrentFragment(fragment: Fragment, name: String) =
@@ -82,6 +95,17 @@ class LandingDetailFragment : Fragment() {
             replace(R.id.dynamic_layout, fragment, name)
             commit()
         }
+
+    override fun onPause() {
+        super.onPause()
+
+        // Enable automatic fragment logging
+        EOCore.updateConfig(
+            Tealeaf.TLF_Enable_Fragment_Life_Cycle_Listener,
+            "true",
+            TealeafEOLifecycleObject.getInstance()
+        )
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

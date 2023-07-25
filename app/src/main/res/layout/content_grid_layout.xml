@@ -58,8 +58,8 @@
                 android:layout_columnSpan="4"
                 android:layout_columnWeight="4"
                 android:layout_margin="4dp"
-                android:contentDescription="@string/grid_layout_button1"
-                android:backgroundTint="@android:color/holo_blue_bright" />
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:contentDescription="@string/grid_layout_button1" />
 
             <Button
                 android:id="@+id/button2"
@@ -68,8 +68,8 @@
                 android:layout_columnSpan="4"
                 android:layout_columnWeight="4"
                 android:layout_margin="4dp"
-                android:contentDescription="@string/grid_layout_button2"
-                android:backgroundTint="@android:color/holo_purple"/>
+                android:backgroundTint="@android:color/holo_purple"
+                android:contentDescription="@string/grid_layout_button2" />
 
             <Button
                 android:id="@+id/button3"
@@ -77,38 +77,38 @@
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="2"
                 android:layout_columnWeight="2"
+                android:layout_margin="4dp"
                 android:backgroundTint="@android:color/holo_green_light"
-                android:contentDescription="@string/grid_layout_button3"
-                android:layout_margin="4dp" />
+                android:contentDescription="@string/grid_layout_button3" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/teal_200"
-                android:contentDescription="@string/grid_layout_button4"
                 android:layout_row="0"
                 android:layout_rowSpan="3"
                 android:layout_rowWeight="3"
                 android:layout_columnSpan="2"
                 android:layout_columnWeight="2"
-                android:layout_margin="4dp" />
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/teal_200"
+                android:contentDescription="@string/grid_layout_button4" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:backgroundTint="@android:color/holo_orange_light"
-                android:contentDescription="@string/grid_layout_button5"
-                android:layout_margin="4dp" />
+                android:contentDescription="@string/grid_layout_button5" />
 
             <Button
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:backgroundTint="@android:color/holo_red_light"
-                android:contentDescription="@string/grid_layout_button6"
-                android:layout_margin="4dp" />
+                android:contentDescription="@string/grid_layout_button6" />
 
             <Button
                 android:id="@+id/button7"
@@ -117,32 +117,32 @@
                 android:layout_margin="4dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/material_dynamic_primary20"
-                android:contentDescription="@string/grid_layout_button7"/>
+                android:backgroundTint="#001E2C"
+                android:contentDescription="@string/grid_layout_button7" />
 
             <Button
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:contentDescription="@string/grid_layout_button8"
-                android:backgroundTint="@color/material_dynamic_neutral_variant70"/>
+                android:backgroundTint="#A5ACB2"
+                android:contentDescription="@string/grid_layout_button8" />
 
             <Button
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:backgroundTint="@android:color/holo_purple"
-                android:contentDescription="@string/grid_layout_button9"
-                android:layout_margin="4dp" />
+                android:contentDescription="@string/grid_layout_button9" />
 
             <Button
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/teal_200"
                 android:layout_margin="4dp"
-                android:contentDescription="@string/grid_layout_button10"/>
+                android:backgroundTint="@color/teal_200"
+                android:contentDescription="@string/grid_layout_button10" />
 
             <Button
                 android:id="@+id/button11"
@@ -150,14 +150,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:backgroundTint="@android:color/holo_blue_light"
-                android:contentDescription="@string/grid_layout_button11"/>
+                android:contentDescription="@string/grid_layout_button11" />
 
             <Button
                 android:id="@+id/button12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:contentDescription="@string/grid_layout_button12"/>
+                android:contentDescription="@string/grid_layout_button12" />
 
         </GridLayout>
 

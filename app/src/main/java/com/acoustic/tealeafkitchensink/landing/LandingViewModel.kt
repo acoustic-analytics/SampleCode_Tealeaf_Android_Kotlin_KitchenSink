@@ -85,6 +85,13 @@ class LandingViewModel : ViewModel() {
                     "Container Views layout, organize, and present large data sets."
                 )
             )
+            add(
+                Component(
+                    7,
+                    "Fragment Not Logged",
+                    "Logging for this fragment has been disabled."
+                )
+            )
         }
     }
 }

@@ -22,13 +22,13 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acoustic.tealeafkitchensink.R
 import com.acoustic.tealeafkitchensink.databinding.FragmentLandingBinding
+import com.tl.uic.Tealeaf
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation
@@ -42,7 +42,7 @@ class LandingFragment : Fragment(), MenuProvider {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Inflate the layout for this fragment
         _binding = FragmentLandingBinding.inflate(inflater, container, false)
@@ -61,17 +61,17 @@ class LandingFragment : Fragment(), MenuProvider {
         })
         binding.recyclerView.adapter = adapter
 
-        //add data to the recyclerview adapter
-        landingViewModel.componentItems.observe(viewLifecycleOwner, Observer {
+        // Add data to the recyclerview adapter
+        landingViewModel.componentItems.observe(viewLifecycleOwner) {
             it?.let {
                 adapter.submitList(it)
             }
-        })
+        }
 
         binding.lifecycleOwner = this
 
         // Add an Observer on the state variable for Navigating when an item is clicked.
-        landingViewModel.navigateToLandingDetail.observe(viewLifecycleOwner, Observer { item ->
+        landingViewModel.navigateToLandingDetail.observe(viewLifecycleOwner) { item ->
             item?.let {
                 Handler(Looper.getMainLooper()).postDelayed({
                     this.findNavController().navigate(
@@ -79,9 +79,8 @@ class LandingFragment : Fragment(), MenuProvider {
                     )
                     landingViewModel.onLandingDetailNavigated()
                 }, 500)
-
             }
-        })
+        }
 
         //setting up recyclerview divider lines
         val manager = LinearLayoutManager(activity)
@@ -92,11 +91,9 @@ class LandingFragment : Fragment(), MenuProvider {
         )
         binding.recyclerView.addItemDecoration(dividerItemDecoration)
 
+        // Manually set page name so automatic logging picks up the screen change
+        Tealeaf.setCurrentLogicalPageName("LandingFragment")
         return binding.root
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     override fun onDestroyView() {

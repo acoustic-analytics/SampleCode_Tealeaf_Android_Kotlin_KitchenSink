@@ -19,7 +19,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -32,7 +31,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.acoustic.tealeafkitchensink.MainActivity
 import com.acoustic.tealeafkitchensink.R
 import com.acoustic.tealeafkitchensink.databinding.ActivityLoginBinding
+import com.ibm.eo.EOCore
 import com.tl.uic.Tealeaf
+import com.tl.uic.TealeafEOLifecycleObject
 
 class LoginActivity : AppCompatActivity() {
 
@@ -46,7 +47,13 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var tealeaf = Tealeaf(application)
-        Tealeaf.enable()
+        Tealeaf.enable(
+            EOCore.getConfigItemString(Tealeaf.TLF_APP_KEY, TealeafEOLifecycleObject.getInstance()),
+            EOCore.getConfigItemString(
+                Tealeaf.TLF_POST_MESSAGE_URL,
+                TealeafEOLifecycleObject.getInstance()
+            )
+        )
 
         val username = binding.username
         val password = binding.password

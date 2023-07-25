@@ -1,18 +1,18 @@
 Bug Fixes
 
-- None.
+- Minor.
 
 
 Improvements:
 
-- None.
+- Disable screen logging by logicalPageName.
 
 
 Our environment for this release:
 
-- Android Studio Dolphin 2021.3.1
-- MacOS 12.6
-- target API level 21 to 32
+- Android Studio Flamingo | 2022.2.1 Patch 2
+- MacOS 13.3
+- target API level 21 to 34
 
 
 Known Issues
